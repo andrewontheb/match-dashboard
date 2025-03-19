@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'TacticSans';
+    src: url('./TacticSans-BldIt.ttf') format('ttf'),
+        url('./TacticSans-BldIt.woff') format('woff'),
+        url('./TacticSans-BldIt.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}

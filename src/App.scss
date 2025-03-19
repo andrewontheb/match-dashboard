@@ -1,0 +1,84 @@
+@import 'styles/vars';
+
+#root {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.match-list {
+  background-color: $main-bg;
+  min-width: 90vw;
+}
+
+.match-row-item {
+  background-color: $row-bg;
+}
+
+.match-status {
+  background: transparent;
+  border-radius: 4px;
+  padding: 6px 8px;
+  min-width: 92px;
+  font-weight: 600;
+
+  &--ongoing {
+      background: $btn-green;
+  }
+
+  &--finished {
+      background: $btn-red;
+  }
+
+  &--scheduled {
+      background: $btn-orange;
+  }
+}
+
+.match-score {
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.btn-update {
+  min-width: 204px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: $btn-red;
+  transition: border-color 0.25s;
+  cursor: pointer;
+}
+
+.main-title {
+  font-size: 32px;
+  font-family: 'TacticSans', sans-serif;
+}
+.err-block {
+  background: $err-bg;
+  border-radius: 4px;
+  padding: 3px 10px;
+  .err-text {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear;
+}
