@@ -1,13 +1,13 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { ApiResponse, Match as MatchProps} from '../types'
-import { fetchTodos } from '../api'
+import { fetchMatchesData } from '../api'
 import { Match } from './Match'
 import { HeadRow } from './HeadRow'
 
 export function MatchList(): React.ReactElement {
     const { data, refetch, isError } = useSuspenseQuery<ApiResponse>({
       queryKey: ["data"],
-      queryFn: fetchTodos,
+      queryFn: fetchMatchesData,
       refetchOnWindowFocus: false,
       retry: false,
       staleTime: 1000 * 60 * 5
