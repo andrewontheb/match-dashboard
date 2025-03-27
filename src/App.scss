@@ -1,6 +1,7 @@
 @import 'styles/vars';
 
 #root {
+  width: 100%;
   max-width: 1920px;
   margin: 0 auto;
   padding: 2rem;
@@ -14,6 +15,33 @@
 
 .match-row-item {
   background-color: $row-bg;
+  border-radius: 4px;
+  .match-details {
+    flex: 1;
+    &__userInfo {
+      flex: 1;
+      // min-width: calc((100% / 3) - 0.5rem);
+    }
+  }
+  .match-details__userInfo, .match-details__teamOverview {
+    height: 52px;
+    border-radius: 5px;
+    background-color: $details-bg;
+  }
+}
+
+.inactive {
+  max-height: 0;
+  margin: 0;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.active {
+  max-height: 100%;
+  transition: all 0.5s ease;
+  opacity: 1;
+  transform:  scale(1);
 }
 
 .match-status {
@@ -22,6 +50,11 @@
   padding: 6px 8px;
   min-width: 92px;
   font-weight: 600;
+
+  &__filter {
+    background-color: $err-bg;
+    color: $filter-color;
+  }
 
   &--ongoing {
       background: $btn-green;
@@ -70,15 +103,18 @@
   }
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
+@mixin overview-labels {
+  @apply font-medium text-sm text-[#FAFAFA]/40;
 }
 
-.animate-spin {
-  animation: spin 1s linear;
+@mixin overview-values {
+  @apply ml-2 text-base font-semibold text-[#F2F6F6]
+} 
+
+.overview-label {
+  @include overview-labels
+}
+
+.overview-value {
+  @include overview-values
 }
