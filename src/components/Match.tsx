@@ -56,13 +56,12 @@ export const Match: React.FC<MatchProps> = ({ awayTeam, awayScore, homeTeam, hom
       {
         isDetailsOpened && (
           <>
-            <div className={`flex gap-[32px] mt-12 max-sm:flex-col ${isDetailsOpened ? 'active' : 'inactive'}`} >
               <Suspense fallback={<div className='flex items-center justify-center flex-1 px-[16px]'>Загрузка...</div>}>
-                <MatchDetails {...homeTeam} />
-                <MatchDetails {...awayTeam} />
-              </Suspense>
-
-            </div>
+                <div className='fade-in flex gap-[32px] mt-12 max-sm:flex-col'>
+                  <MatchDetails {...homeTeam} />
+                  <MatchDetails {...awayTeam} />
+                </div>
+              </Suspense>            
           </>
         )
       }

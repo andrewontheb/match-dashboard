@@ -22,6 +22,12 @@
       flex: 1;
       // min-width: calc((100% / 3) - 0.5rem);
     }
+    &:nth-of-type(1):after {
+      content: " vs ";
+        font-weight: bold;
+        color: $filter-color;
+        margin-top: 18px;
+    }
   }
   .match-details__userInfo, .match-details__teamOverview {
     height: 52px;
@@ -41,7 +47,7 @@
   max-height: 100%;
   transition: all 0.5s ease;
   opacity: 1;
-  transform:  scale(1);
+  transform: scale(1);
 }
 
 .match-status {
@@ -117,4 +123,22 @@
 
 .overview-value {
   @include overview-values
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    scale: 0.95;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
+  }
 }

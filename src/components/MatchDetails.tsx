@@ -4,7 +4,7 @@ import PlayerInfo from './PlayerInfo';
 import TeamOverview from './TeamOverview';
 
 const MatchDetails: React.FC<Team> = ({ players, points, place, total_kills }) => (
-    <div className="flex items-center justify-center flex-wrap match-details gap-2">
+    <div className="flex items-center justify-center flex-wrap match-details gap-2 sm:after:hidden">
       {players.map((player: Player, index: number) => (
         <PlayerInfo key={index} {...player} />
       ))}
